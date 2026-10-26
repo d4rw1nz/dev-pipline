@@ -7,27 +7,9 @@ description: 软件项目开发指南：初始化或接入已有项目，落地 
 
 本 skill 指导目标项目建立和使用开发流程。项目自己的 CLI、Issue 数据、静态页面和门禁留在项目内，与产品运行代码隔离。指南、模板与实际可用能力要分别说明。
 
-## 架构
-**No backward compatibility** - Break old formatsfreely
-
-## Agent
-# 用户指令优先级高于 Skill，冲突时遵循用户指令。
-
-### 表达
--用正常中文说话，不要拽词。技术黑话、生造术语、翻译腔—这些一出来就换掉，用正常人会说的话重新说。
--不要用比喻来解释概念。把概念本身讲清楚，不要拿另一个东西来类比。
-- 不要假设对方知道你知道的东西。术语、文档、之前的讨论—对方可能不了解的，当场说清楚背景，不要没头没尾。
-
-### 复杂度
-1、要为一个推测出来的、几乎不会发生的并发或安全边界加复杂度之前，先跟用户讲清楚：具体会出什么问题、概率多大、要多写多少，用户点头了再加。不许为了「理论上更稳」悄悄扩大范围。
-
-### 代码
-2、外面进来的数据只在入口校验一次，往里传就用定好类型的值，不要每一层再判断一遍。
-3、只用一次的逻辑不要提前抽成函数，直接写在调用的地方，除非它会复用，或者真藏着一块复杂的东西。
-4、能不用 try/catch 就不用，能一个函数写完就别拆。
-
 ## 共同原则
 
+- 架构、Agent 和界面规则统一维护在 [AGENTS.md 模板](assets/AGENTS.md.template)。初始化、接入项目或用户要求同步这些规则时，按 [AGENTS.md 写入规则](references/documentation.md#agentsmd-写入) 将完整原文写入目标项目的 AGENTS.md，不能只留在 skill 中或用链接代替正文。
 - 正式开发完整交付已承诺范围，处理真实失败；不能用演示代码、假数据、吞错或临时拼接交差。快速开发靠聚焦范围和复用可靠能力。只有用户要求以原型为交付目标时才按原型验收；定位、研究和验证所需的隔离实验属于正常工作，不能代替正式实现。
 - 从用户结果、业务规则、数据归属和实际限制推导方案。默认不向后兼容：更新受控调用方，删除旧格式、重复状态和过渡实现；查清实际用户数据与外部协议的影响，必要的数据转换一次完成，不长期维护双实现。
 - 组织即架构，架构即组织：目录、模块、依赖、状态写入者和生命周期管理者表达一致职责。修 bug 必须理解相关项目架构、完整调用与状态流，再决定根因修复；不能只在报错行加条件，也不能无依据全仓重写。
@@ -49,11 +31,11 @@ description: 软件项目开发指南：初始化或接入已有项目，落地 
 
 | 当前工作 | 读取并执行 |
 | --- | --- |
-| `init` / `adopt` | [文档结构](references/documentation.md)、[Make](references/make.md)、[项目门禁](references/gates.md)；已有项目另读 [现有项目分析](references/project-adoption.md)。按需适配 [AGENTS.md 模板](assets/AGENTS.md.template) |
+| `init` / `adopt` | [文档结构](references/documentation.md)、[Make](references/make.md)、[项目门禁](references/gates.md)；已有项目另读 [现有项目分析](references/project-adoption.md)。按 [写入规则](references/documentation.md#agentsmd-写入) 落地 [AGENTS.md 模板](assets/AGENTS.md.template) 中的完整规则，并适配项目约定 |
 | `research` / `require` | [文档结构](references/documentation.md)：研究与需求必须文件落地，逐轮更新同一主题；验收内容由需求文件维护 |
 | `connect` | [来源接入](references/sources.md)：实际配置、验证与记录，不能用占位适配器声称已接通 |
 | `run` / `loop` / `resume` | [自动闭环](references/workflow.md)：任务类型、完成条件、恢复与停止规则；[门禁](references/gates.md) 核实适用证据 |
-| 界面设计、实现或 review | [界面规则](references/interface.md)：文案、交互、排版、颜色、形状与对齐、动画 |
+| 界面设计、实现或 review | [AGENTS.md 模板中的界面规则](assets/AGENTS.md.template#界面)：文案、交互、排版、颜色、形状与对齐、动画 |
 | bug、架构、接口、界面或外部集成 | [架构与问题修复](references/architecture.md) 及 [Git 历史与提交](references/git.md)：内含 geju 的目标判断、方案取舍与可证伪验证 |
 | `test` / `review`、正式代码交付 | [验证与复审](references/quality.md)：实现与测试独立设计，单测行覆盖率以 80% 为目标；首轮验证后由未编写实现的 agent 交叉 deep-review，修正后重验与复核 |
 | 任务结束或交付内容 | 按 [闭环完成条件](references/workflow.md) 验收；执行 [quality 中的 sanitize-artifacts](references/quality.md)，保留真实限制与未执行项，清除对话和制作过程残留 |

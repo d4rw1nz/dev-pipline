@@ -24,7 +24,7 @@
 
 先检查目录、Git、已有规则和工具。新项目建立五类 docs 及职责索引；未定的选型写明未知，不编造命令或假目标。已有内容按职责补齐，不覆盖用户规则或生成文件。按 Issue 指南在项目内实现开发管理工具，独立验证并接入 Make。用户仅要求文档初始化时只完成该范围，如实注明其他能力未建立。
 
-Makefile 基于实际工具，执行 help 与适用检查。AGENTS.md 简短导航到开发规范、结构、经验和 Issue 入口，不复制整套 skill。
+Makefile 基于实际工具，执行 help 与适用检查。AGENTS.md 按 [写入规则](documentation.md#agentsmd-写入) 包含模板中的完整架构、Agent 和界面规则，再简短导航到开发规范、结构、经验和 Issue 入口，不复制整套 skill。
 
 ## research 与 require
 
