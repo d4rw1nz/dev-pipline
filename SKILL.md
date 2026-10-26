@@ -9,6 +9,7 @@ description: 软件项目开发指南：初始化或接入已有项目，落地 
 
 ## 共同原则
 
+- 创建 subagent 前必须读取并满足 [子代理规则](assets/AGENTS.md.template#子代理)，说明本次属于哪种场景、具体收益和独立交付物；不符合条件时由主 agent 完成，不为凑流程创建子代理。
 - 架构、Agent 和界面规则统一维护在 [AGENTS.md 模板](assets/AGENTS.md.template)。初始化、接入项目或用户要求同步这些规则时，按 [AGENTS.md 写入规则](references/documentation.md#agentsmd-写入) 将完整原文写入目标项目的 AGENTS.md，不能只留在 skill 中或用链接代替正文。
 - 正式开发完整交付已承诺范围，处理真实失败；不能用演示代码、假数据、吞错或临时拼接交差。快速开发靠聚焦范围和复用可靠能力。只有用户要求以原型为交付目标时才按原型验收；定位、研究和验证所需的隔离实验属于正常工作，不能代替正式实现。
 - 从用户结果、业务规则、数据归属和实际限制推导方案。默认不向后兼容：更新受控调用方，删除旧格式、重复状态和过渡实现；查清实际用户数据与外部协议的影响，必要的数据转换一次完成，不长期维护双实现。
@@ -37,7 +38,7 @@ description: 软件项目开发指南：初始化或接入已有项目，落地 
 | `run` / `loop` / `resume` | [自动闭环](references/workflow.md)：任务类型、完成条件、恢复与停止规则；[门禁](references/gates.md) 核实适用证据 |
 | 界面设计、实现或 review | [AGENTS.md 模板中的界面规则](assets/AGENTS.md.template#界面)：文案、交互、排版、颜色、形状与对齐、动画 |
 | bug、架构、接口、界面或外部集成 | [架构与问题修复](references/architecture.md) 及 [Git 历史与提交](references/git.md)：内含 geju 的目标判断、方案取舍与可证伪验证 |
-| `test` / `review`、正式代码交付 | [验证与复审](references/quality.md)：实现与测试独立设计，单测行覆盖率以 80% 为目标；首轮验证后由未编写实现的 agent 交叉 deep-review，修正后重验与复核 |
+| `test` / `review`、正式代码交付 | [验证与复审](references/quality.md)：实现与测试独立设计，单测行覆盖率以 80% 为目标；首轮验证后做 deep-review，需要独立审阅时按子代理规则安排交叉复审，修正后重验与复核 |
 | 任务结束或交付内容 | 按 [闭环完成条件](references/workflow.md) 验收；执行 [quality 中的 sanitize-artifacts](references/quality.md)，保留真实限制与未执行项，清除对话和制作过程残留 |
 | `learn` / `tidy`、每个需求的反思 | [知识维护](references/knowledge.md)：落实长期反馈，判断经验是否值得保存，优先修正已有知识与可执行检查，不凑总结数量 |
 | `status`、提交或 PR | 状态报告区分本地验收、远端状态、提交与发布；实际提交和 PR 遵循 [中文 Git 规范](references/git.md) |
