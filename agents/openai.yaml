@@ -1,3 +1,3 @@
 interface:
   display_name: "dev-pipline"
-  short_description: "指导项目建立 Make、Issue、文档和门禁，自动开发、交叉复审并沉淀经验"
+  short_description: "用简短 Markdown 记录任务，指导开发、验证、按需复审与经验维护"
