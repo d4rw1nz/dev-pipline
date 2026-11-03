@@ -14,7 +14,7 @@ description: 指导软件项目初始化、接入、功能开发、bug 修复和
 - 目录、模块、依赖和生命周期应体现清楚的职责。修 bug 前理解相关调用与数据变化，在根因所属位置修复。
 - 结合当前源码、未提交改动和相关 Git 历史查证。研究结论与已确认需求分别记录。
 - Make 提供统一开发入口；已有项目逐步接入，复用可靠脚本。任务进度维护在对应 Issue，长期规则维护在项目文档或测试中。
-- 使用子代理前读取 [子代理规则](assets/AGENTS.md.template#子代理)，说明适用场景、具体收益与交付物；其余工作由主 agent 完成。
+- 子代理的适用条件与交付要求统一见 [分工规则](assets/AGENTS.md.template#子代理)。
 - 初始化、接入项目或同步规则时，按 [AGENTS.md 写入规则](references/documentation.md#agentsmd-写入) 将模板中的固定规则原文写入项目 AGENTS.md。
 - 在已授权范围内持续完成工作。提交、推送、外部回写与发布分别遵守当前授权。
 
@@ -38,7 +38,7 @@ description: 指导软件项目初始化、接入、功能开发、bug 修复和
 | `run` / `loop` / `resume` | [任务执行](references/workflow.md)：完成条件、持续推进与中断恢复 |
 | 界面设计、实现或审查 | [界面规则](assets/AGENTS.md.template#界面)：文案、交互、排版、颜色、对齐与动画 |
 | bug、架构、接口或外部集成 | [架构与根因修复](references/architecture.md)、[Git 历史与提交](references/git.md) |
-| `test` / `review`、代码交付 | [验证与复审](references/quality.md)：独立设计测试，首轮验证后深度复审，按需安排交叉复审 |
+| `test` / `review`、代码交付 | [验证与复审](references/quality.md)：从需求设计测试，首轮验证后深度复审 |
 | 交付 | [完成条件](references/workflow.md)、[交付检查](references/gates.md)、[交付内容整理](references/quality.md#交付内容整理) |
 | `learn` / `tidy`、需求结束 | [知识维护](references/knowledge.md)：保存可复用结论，更新已有规则或测试 |
 | `status`、提交或 PR | 只读核实进度；提交与 PR 遵循 [中文 Git 规范](references/git.md) |
