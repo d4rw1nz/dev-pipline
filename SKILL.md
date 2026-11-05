@@ -17,6 +17,7 @@ description: 指导软件项目初始化、接入、功能开发、bug 修复和
 - 子代理的适用条件与交付要求统一见 [分工规则](assets/AGENTS.md.template#子代理)。
 - 初始化、接入项目或同步规则时，按 [AGENTS.md 写入规则](references/documentation.md#agentsmd-写入) 将模板中的固定规则原文写入项目 AGENTS.md。
 - 在已授权范围内持续完成工作。提交、推送、外部回写与发布分别遵守当前授权。
+- 功能实现与 bug 修复的结果以可视化为主要表达方式，让用户直接看懂改动、原因与结果，文字保持简短。
 
 ## 开始工作
 
@@ -39,7 +40,7 @@ description: 指导软件项目初始化、接入、功能开发、bug 修复和
 | 界面设计、实现或审查 | [界面规则](assets/AGENTS.md.template#界面)：文案、交互、排版、颜色、对齐与动画 |
 | bug、架构、接口或外部集成 | [架构与根因修复](references/architecture.md)、[Git 历史与提交](references/git.md) |
 | `test` / `review`、代码交付 | [验证与复审](references/quality.md)：从需求设计测试，首轮验证后深度复审 |
-| 交付 | [完成条件](references/workflow.md)、[交付检查](references/gates.md)、[交付内容整理](references/quality.md#交付内容整理) |
+| 交付 | [完成条件](references/workflow.md)、[交付检查](references/gates.md)、[交付内容整理](references/quality.md#交付内容整理)；功能实现和 bug 修复按 [结果汇报](references/quality.md#结果汇报) 以图呈现改动、原因与结果 |
 | `learn` / `tidy`、需求结束 | [知识维护](references/knowledge.md)：保存可复用结论，更新已有规则或测试 |
 | `status`、提交或 PR | 只读核实进度；提交与 PR 遵循 [中文 Git 规范](references/git.md) |
 
